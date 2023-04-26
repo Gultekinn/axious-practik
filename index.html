@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+        integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ" crossorigin="anonymous">
+
+    <link rel="stylesheet" href="main.css">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <div class="navbar">
+        <div>
+            <h3>Where in the world?</h3>
+        </div>
+        <div><i class="fa-solid fa-moon" style="color: #b6bbc3;">Dark mode</i></div>
+    </div>
+
+
+    <form>
+        <input id="inp" type="text">
+        <button id="addBtn">add</button>
+    </form>
+
+
+
+<div class="container" id="container">
+    <!-- <div id="cart1">
+
+        <img class="img1"
+            src="data:image/jpeg;base64,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"
+            alt="">
+        <div class="text1">
+            <h5>Germany</h5>
+            <p>population:81.4675678.5783</p>
+            <p>Region:Europe</p>
+            <p>Capital:Berlin</p>
+        </div>
+
+    </div> -->
+</div>
+    
+
+
+
+
+
+
+    <script src="https://cdn.jsdelivr.net/npm/darkmode-js@1.3.4/lib/darkmode-js.min.js"></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe"
+        crossorigin="anonymous"></script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/1.3.6/axios.min.js"
+        integrity="sha512-06NZg89vaTNvnFgFTqi/dJKFadQ6FIglD6Yg1HHWAUtVFFoXli9BZL4q4EO1UTKpOfCfW5ws2Z6gw49Swsilsg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="main.js"></script>
+</body>
+
+</html>
